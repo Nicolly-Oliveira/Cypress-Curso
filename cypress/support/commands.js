@@ -36,8 +36,8 @@ Cypress.Commands.add('clickAlert', (locator, message) => {
 
 Cypress.Commands.add('login', (user, passwd) => {
     cy.visit('https://barrigareact.wcaquino.me/')
-    cy.get(locators.LOGIN.USER).type('nicollyqwerty@gmail.com')
-    cy.get(locators.LOGIN.PASSWORD).type('Brazil123*')
+    cy.get(locators.LOGIN.USER).type(user)
+    cy.get(locators.LOGIN.PASSWORD).type(passwd)
     cy.get(locators.LOGIN.BTN_LOGIN).click()
     cy.get(locators.MESSAGE).should('be.visible').and('contain', 'Bem vindo')
 })

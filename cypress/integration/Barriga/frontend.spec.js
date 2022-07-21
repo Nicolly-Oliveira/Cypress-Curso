@@ -5,12 +5,19 @@ import '../../support/commandsContas'
 
 describe('Should test at a functional level', () => {
     before(() => {
+        cy.server()
+        cy.route({
+            method: 'GET',
+            url: '/signin',
+            response: {
+                id: '222',
+                name: 'Usuario Falso',
+                token: 'Uma string que nao deveria ser aceita'
+            }
+
+        }).as('singin')
         cy.login('nicollyqwerty@gmail.com', 'Brazil123*')
-        //cy.visit('https://barrigareact.wcaquino.me/')
-        //cy.get(locators.LOGIN.USER).type('nicollyqwerty@gmail.com')
-        //cy.get(locators.LOGIN.PASSWORD).type('Brazil123*')
-        //cy.get(locators.LOGIN.BTN_LOGIN).click()
-        //cy.get(locators.MESSAGE).should('be.visible').and('contain', 'Bem vindo')
+        
     })
 
     beforeEach(() => {
