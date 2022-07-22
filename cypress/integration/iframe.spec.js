@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-/*describe('Work with iframe', () => {
+describe('Work with iframe', () => {
 
     it('Deve preencher campo de texto', () => {
         cy.visit('https://wcaquino.me/cypress/componentes.html')
@@ -11,10 +11,10 @@
                 .should('have.value', 'funciona?')
 
         //essa forma possui limitações
-        cy.on('window:alert', msg => {
+        /*cy.on('window:alert', msg => {
             expect(msg).to.be.equal('Alert simples')
         })
-        cy.wrap(body).find('#otherButton').click()
+        cy.wrap(body).find('#otherButton').click()*/
 
         })
     })
@@ -27,4 +27,4 @@
         })
     })
 
-})*/
+})
